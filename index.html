@@ -99,32 +99,66 @@
   tbody td.cell-flash{animation:cellFlash 1.8s ease-out; border-radius:10px;}
   .step-summary td.zero{color:#C7CCDA; font-weight:600;}
 
-  .table-scroll{overflow-x:auto; border:1px solid var(--line); border-radius:14px; margin-top:8px;}
-  table{border-collapse:collapse; width:100%; min-width:1560px;}
+  .table-scroll{
+    overflow:auto; -webkit-overflow-scrolling:touch;
+    border:1px solid var(--line); border-radius:14px; margin-top:8px;
+    max-height:72vh;
+  }
+  table{border-collapse:collapse; width:100%; min-width:600px;}
   thead th{
     background:var(--navy); color:var(--white); font-size:12.5px; font-weight:700;
-    padding:10px 8px; text-align:center; position:sticky; top:0; white-space:pre-line;
+    padding:10px 8px; text-align:center; white-space:pre-line;
+    position:sticky; top:0; z-index:2;
   }
-  thead th.who-col{text-align:left; padding-left:14px; min-width:150px;}
+  thead th.who-col{
+    text-align:left; padding-left:14px; min-width:130px; width:130px;
+    left:0; z-index:3;
+  }
   tbody td{
-    border-top:1px solid var(--line); padding:6px 6px; vertical-align:top; text-align:center;
-    min-width:140px;
+    border-top:1px solid var(--line); padding:5px 5px; vertical-align:top; text-align:center;
+    min-width:112px;
   }
   tbody tr:nth-child(even){background:#FBFCFF;}
   tbody tr.leader-row{background:var(--blue-tint);}
-  .who-cell{text-align:left; padding-left:14px !important; white-space:nowrap;}
-  .coach-name{font-size:14px; font-weight:800; color:var(--navy);}
-  .leader-badge{
-    display:inline-block; font-size:10px; font-weight:800; color:var(--white);
-    background:var(--orange); border-radius:6px; padding:1px 6px; margin-left:6px; vertical-align:middle;
+  .who-cell{
+    text-align:left; padding-left:14px !important; white-space:nowrap;
+    position:sticky; left:0; z-index:1;
+    background:var(--white);
+    box-shadow:2px 0 4px rgba(15,25,70,0.06);
   }
-  .coachee-name{font-size:12px; color:var(--slate); margin-top:2px;}
+  tbody tr:nth-child(even) .who-cell{background:#FBFCFF;}
+  tbody tr.leader-row .who-cell{background:var(--blue-tint);}
+  .coach-name{font-size:13.5px; font-weight:800; color:var(--navy);}
+  .leader-badge{
+    display:inline-block; font-size:9.5px; font-weight:800; color:var(--white);
+    background:var(--orange); border-radius:6px; padding:1px 5px; margin-left:5px; vertical-align:middle;
+  }
+  .coachee-name{font-size:11.5px; color:var(--slate); margin-top:2px;}
 
-  .cell-box{display:flex; flex-direction:column; gap:4px; align-items:stretch;}
-  .cell-row{display:flex; align-items:center; gap:5px;}
+  .cell-box{display:flex; flex-direction:column; gap:3px; align-items:stretch;}
+  .cell-row{display:flex; align-items:center; gap:4px;}
   .field-label{
-    font-size:9.5px; font-weight:800; color:#B7BFCF; width:40px; flex-shrink:0; text-align:left;
+    font-size:9px; font-weight:800; color:#B7BFCF; width:34px; flex-shrink:0; text-align:left;
     white-space:nowrap;
+  }
+  @media (max-width:640px){
+    .hero h1{font-size:18px;}
+    .hero .eyebrow{font-size:11px; padding:5px 12px; margin-bottom:10px;}
+    .summary-title{font-size:13px; margin:14px 0 6px;}
+    .step-summary{min-width:480px;}
+    .step-summary th, .step-summary td{padding:6px 4px; font-size:11.5px;}
+
+    .table-scroll{max-height:68vh;}
+    table{min-width:460px;}
+    thead th{font-size:11px; padding:8px 5px;}
+    thead th.who-col{min-width:104px; width:104px; padding-left:10px;}
+    tbody td{padding:4px 3px; min-width:92px;}
+    .who-cell{padding-left:10px !important;}
+    .coach-name{font-size:12.5px;}
+    .coachee-name{font-size:10.5px;}
+    .field-label{width:30px; font-size:8.5px;}
+    select.status-select{font-size:10.5px; padding:4px 3px; padding-right:14px;}
+    .field-input, select.date-part{font-size:10px; padding:3px 4px;}
   }
   select.status-select{
     font-family:inherit; font-size:11.5px; font-weight:700; border-radius:8px; border:1.5px solid var(--line);
