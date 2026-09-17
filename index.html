@@ -26,7 +26,7 @@
     --danger:#D9455F;
     --radius:14px;
     --who-w:88px;
-    --label-w:34px;
+    --label-w:28px;
   }
   *{box-sizing:border-box;}
   html{background:var(--navy);}
@@ -135,13 +135,14 @@
   tbody tr.stripe-b .who-cell, tbody tr.stripe-b .label-cell{background:#FBFCFF;}
   tbody tr.leader-row .who-cell, tbody tr.leader-row .label-cell{background:var(--blue-tint);}
   .who-cell{
-    text-align:left; padding-left:8px !important; padding-right:6px; white-space:normal; word-break:keep-all;
+    text-align:center; padding-left:6px !important; padding-right:6px; white-space:normal; word-break:keep-all;
     left:0; z-index:2;
     box-shadow:2px 0 4px rgba(15,25,70,0.06);
   }
   .label-cell{
-    left:var(--who-w); font-size:10px; font-weight:800; color:var(--slate);
-    white-space:nowrap;
+    left:var(--who-w); font-size:9.5px; font-weight:800; color:var(--slate);
+    white-space:nowrap; min-width:var(--label-w); width:var(--label-w);
+    padding-left:2px !important; padding-right:2px !important;
   }
   .coach-name{font-size:12.5px; font-weight:800; color:var(--navy);}
   .leader-badge{
@@ -151,7 +152,7 @@
   .coachee-name{font-size:10.5px; color:var(--slate); margin-top:1px;}
 
   @media (max-width:640px){
-    :root{ --who-w:66px; --label-w:28px; }
+    :root{ --who-w:66px; --label-w:22px; }
     .hero h1{font-size:18px;}
     .hero .eyebrow{font-size:11px; padding:5px 12px; margin-bottom:10px;}
     .summary-title{font-size:13px; margin:14px 0 6px;}
